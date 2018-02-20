@@ -4,6 +4,7 @@ body {
 
 	font-family: "Arial", Arial, sans-serif;
   	font-size: 16px;
+  	background-image: url("../img/background.png");
 }
 
 .container {
@@ -12,14 +13,27 @@ body {
 }
 
 .main-header {
-	padding-top: 68px;
+	padding-top: 10px;
 	background-color: #ffffff;
 }
 
+.main-logo {
+	position: relative;
+    top: 13px;
+    left: 20px;
+}
+
 .header-wrapper {
+	margin-top: -48px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     padding-bottom: 34px;
     padding-right: 25px;
 }
@@ -29,6 +43,9 @@ body {
 	text-decoration: none;
 	font-family: "Arial";
 	text-align: center;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(rgb(243,98,64)));
+	background-image: -webkit-linear-gradient(top, #ffffff, rgb(243,98,64));
+	background-image: -o-linear-gradient(top, #ffffff, rgb(243,98,64));
 	background-image: linear-gradient(to bottom, #ffffff, rgb(243,98,64));
     background-size: 100% 3px;
     background-repeat: no-repeat;
@@ -65,9 +82,16 @@ body {
 }
 
 .main-navigation-list {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -115,7 +139,8 @@ body {
 	position: absolute;
 	max-width: 240px;
 	padding: 22px 22px 36px 25px;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	background-color: #ffffff;
 }
 
@@ -163,12 +188,17 @@ body {
 }
 
 .item-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 
 .product-photo {
-	margin: 0 83px 0 57px;
+	margin: 0 45px 0 19px;
 }
 
 .product-photo-img figcaption {
@@ -226,12 +256,18 @@ body {
 
 .checkbox-box {
 	padding-bottom: 69px;
+	background-image: url("../img/group.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 .checkbox + label {
 	cursor: pointer;
 	position: relative;
-	margin-right: 58px;
+	/*z-index: -1;*/
+	margin-right: 53px;
+	margin-left: 1px;
 }
 
 .checkbox + label::before {
@@ -241,9 +277,6 @@ body {
 	height: 60px;
 
 	border-radius: 5px;
-	background-color: red;
-	background-repeat: no-repeat;
-	background-size: contain;
 }
 
 .checkbox:checked + label::after {
@@ -257,7 +290,9 @@ body {
     border-color: #ffffff;
     border-top-style: none;
     border-right-style: none;
-    transform: rotate(-45deg) translateY(50%);
+    -webkit-transform: rotate(-45deg) translateY(50%);
+        -ms-transform: rotate(-45deg) translateY(50%);
+            transform: rotate(-45deg) translateY(50%);
 }
 
 .filter p {
@@ -293,7 +328,28 @@ body {
 }
 
 .features > p {
-	padding-left: 112px;
+	padding-left: 95px;
+	position: relative;
+}
+
+.paragraf-1::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 56px;
+	height: 58px;
+	background-image: url("../img/forma.svg");
+	background-repeat: no-repeat;
+}
+
+.paragraf-2::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 56px;
+	height: 62px;
+	background-image: url("../img/shape.svg");
+	background-repeat: no-repeat;
 }
 
 .features-list {
@@ -347,11 +403,52 @@ body {
 .reviews-title {
 	margin-top: 60px;
 	font-size: 26px;
+	font-weight: 400;
 	color: rgb(72,72,72);
 }
 
 .review-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
-    align-items: baseline;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+}
+
+.user-name {
+	font-size: 16px;
+	letter-spacing: -1px;
+	color: rgb(72,72,72);
+}
+
+.user-info {
+	font-size: 16px;
+	letter-spacing: -1px;
+	color: #c4c4c4;
+}
+
+.rating {
+	margin-top: 12px;
+}
+
+.review-block p {
+	font-size: 16px;
+	letter-spacing: -1px;
+	color: rgb(72,72,72);
+}
+
+.reviews-link {
+	margin-bottom: 33px;
+    margin-right: 70%;
+    display: inline-block;
+}
+
+.comment-button {
+	font-size: 16px;
+	padding: 10px 25px;
+	margin-bottom: 10px;
 }
